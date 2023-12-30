@@ -128,7 +128,10 @@ window.onload = function () {
 }
 function question(){
 	nowqanum = pdNum(),qa=1;
-	for(var i=0;i<questions.length;i++){questions[i].innerHTML=(i+1)+"."+qas[nowqanum[i]][0];}
+	for(var i=0;i<questions.length;i++){
+		questions[i].innerHTML=(i+1)+"."+qas[nowqanum[i]][0];
+		answers[i].innerHTML=(i+1)+".xxxxxxx";
+	}
 }
 function clr(){
 	nowqanum=undefined,qa=0;
