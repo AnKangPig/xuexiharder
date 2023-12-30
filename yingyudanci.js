@@ -128,18 +128,18 @@ window.onload = function () {
 }
 function question(){
 	nowqanum = pdNum(),qa=1;
-	for(var i=0;i<10;i++){questions[i].innerHTML=(i+1)+"."+qas[nowqanum[i]][0];}
+	for(var i=0;i<questions.length;i++){questions[i].innerHTML=(i+1)+"."+qas[nowqanum[i]][0];}
 }
 function clr(){
 	nowqanum=undefined,qa=0;
-	for(var i=0;i<10;i++){
+	for(var i=0;i<questions.length;i++){
 		questions[i].innerHTML=(i+1)+".XXXXXXX";
 		answers[i].innerHTML=(i+1)+".xxxxxxx";
 	}
 }
 function answer(){
 	if(qa!=1)return;
-	for(var i=0;i<10;i++){answers[i].innerHTML=(i+1)+"."+qas[nowqanum[i]][1];}
+	for(var i=0;i<questions.length;i++){answers[i].innerHTML=(i+1)+"."+qas[nowqanum[i]][1];}
 	qa=2;
 }
 
@@ -152,7 +152,7 @@ function pdNum(){
 	[numbers[i], numbers[j]] = [numbers[j], numbers[i]];  
 	}  
 	// 取前 10 个数字输出
-	return numbers.slice(0,10);
+	return numbers.slice(0,questions.length);
 }
 
 
